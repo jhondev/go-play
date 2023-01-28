@@ -5,10 +5,6 @@ import (
 	"sync"
 )
 
-//TODO: run the program and check that variable i
-// was pinned for access from goroutine even after
-// enclosing function returns.
-
 func main() {
 	var wg sync.WaitGroup
 
@@ -21,7 +17,7 @@ func main() {
 			fmt.Printf("value of i: %v\n", i)
 		}()
 		fmt.Println("return from function")
-		return
+		// return
 	}
 
 	incr(&wg)
