@@ -18,8 +18,24 @@ $ mv migrate.linux-amd64 $GOPATH/bin/migrate
 ## Setup
 
 ### Db
+Create `greenlight` user
+```
+CREATE USER greenlight WITH ENCRYPTED PASSWORD 'greenlight';
+```
 Create `greenlight` database in postgres.
-
+```
+CREATE DATABASE greenlight;
+```
+Grant access to `public schema` if using >=`pg15`
+```
+\c greenlight
+GRANT ALL ON SCHEMA public TO greenlight;
+```
+Create `citext` extension
+```
+\c greenlight
+create extension citext;
+```
 Configure environment variable connection:
 ```
 $GREENLIGHT_DB_DSN=<conn_string>
@@ -62,6 +78,13 @@ curl -i localhost:4000/v1/movies/1
 set BODY '{"title":"Black Panther","year":2018,"runtime":"134 mins","genres":["sci-fi","action","adventure"]}'
 curl -X PATCH -d "$BODY" localhost:4000/v1/movies/1
 ```
+
+### create user
+```
+set BODY '{"name": "Alice Smith", "email": "alice@example.com", "password": "12345678"}'
+curl -i -d "$BODY" localhost:4000/v1/users
+```
+
 
 ### Call with errors
 
