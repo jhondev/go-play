@@ -9,3 +9,5 @@ sql:
       go: 
         package: "data"
         out: "../data"
+        emit_params_struct_pointers: true
+        emit_exact_table_names: false

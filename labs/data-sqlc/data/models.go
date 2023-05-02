@@ -8,19 +8,19 @@ import (
 	"database/sql"
 )
 
-type ArenaAuthor struct {
+type Author struct {
 	ID   int64
 	Name string
 	Bio  sql.NullString
 }
 
-type ArenaGame struct {
+type Game struct {
 	ID      int64
 	KeyName string
 	Name    string
 }
 
-type ArenaMatch struct {
+type Match struct {
 	ID    int64
 	Name  string
 	Score sql.NullString

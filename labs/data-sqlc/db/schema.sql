@@ -1,16 +1,14 @@
-CREATE SCHEMA arena;
-
-CREATE TABLE arena.authors (
+CREATE TABLE authors (
   id BIGSERIAL PRIMARY KEY,
   name text NOT NULL,
   bio text
 );
-CREATE TABLE arena.games (
+CREATE TABLE games (
   id BIGSERIAL PRIMARY KEY,
   key_name text NOT NULL,
   name text NOT NULL
 );
-CREATE TABLE arena.matches (
+CREATE TABLE matches (
   id BIGSERIAL PRIMARY KEY,
   name text NOT NULL,
   score text

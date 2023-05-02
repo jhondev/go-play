@@ -1,14 +1,19 @@
 package games
 
 import (
-	"database/sql"
 	"sqlc-test/data"
+
+	"github.com/pocketbase/dbx"
 )
 
 type Games struct {
-	db *data.Queries
+	db  *data.Queries
+	dbx *dbx.DB
 }
 
-func New(db *sql.DB) *Games {
-	return &Games{db: data.New(db)}
+func New(db *dbx.DB) *Games {
+	return &Games{
+		db:  data.New(db.DB()),
+		dbx: db,
+	}
 }
