@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "grpc-patterns/proto";
+
+message OptionalRequest {
+  string req_value = 1;
+  optional string opt_value_1 = 2;
+  optional string opt_value_2 = 3;
+}
+
+message OptionalResponse {
+
+}
+
+service Service {
+  rpc UpdateOptional(OptionalRequest) returns (OptionalResponse) {}
+}
