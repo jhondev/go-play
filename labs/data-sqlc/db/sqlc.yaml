@@ -1,0 +1,13 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    schema: "schema.sql"
+    queries: 
+      - "../games/data"
+      - "../matches/data"
+    gen:
+      go: 
+        package: "data"
+        out: "../data"
+        emit_params_struct_pointers: true
+        emit_exact_table_names: false
