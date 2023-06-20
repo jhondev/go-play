@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"grpc-patterns/proto"
 
 	"github.com/sirupsen/logrus"
@@ -37,9 +38,14 @@ func Test(client proto.ServiceClient) {
 	logrus.Info("Calling service...")
 	empty := ""
 	req := &proto.OptionalRequest{
-		ReqValue:   "req value",
-		OptValue_1: &empty,
+		ReqValue:          "req value",
+		OptValue_1:        &empty,
+		ClassificationIds: &proto.ClassificationIdsList{Values: []string{}},
 	}
+	fmt.Print("\n\nREQUEST VALUES\n")
+	fmt.Print(req)
+	fmt.Print("\n\n")
+
 	resp, err := client.UpdateOptional(context.Background(), req)
 	if err != nil {
 		logrus.Fatalf("Error getting response: %v", err)
