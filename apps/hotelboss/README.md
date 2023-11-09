@@ -1,0 +1,7 @@
+# HotelBoss
+
+## Run
+
+```
+make run
+```
