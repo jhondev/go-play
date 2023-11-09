@@ -1,0 +1,20 @@
+[
+  {
+    "name": "mars",
+    "map": {
+      "id": "Number",
+      "name": "Name",
+      "email": "Email",
+      "salary": "Wage"
+    }
+  },
+  {
+    "name": "pluto",
+    "map": {
+      "id": "ID",
+      "name": "First+Last",
+      "email": "E-mail",
+      "salary": "Salary"
+    }
+  }
+]
