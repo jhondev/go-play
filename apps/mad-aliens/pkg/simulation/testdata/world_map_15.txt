@@ -1,0 +1,15 @@
+Seattle north=Vancouver east=SanFrancisco
+Vancouver south=Seattle east=Portland
+Portland west=Vancouver south=SanFrancisco east=Boise
+SanFrancisco north=Portland east=LosAngeles south=SanDiego west=Seattle
+Boise west=Portland east=SaltLakeCity south=Denver
+SaltLakeCity west=Boise south=LasVegas
+Denver north=Boise south=Dallas
+LasVegas north=SaltLakeCity south=Phoenix
+LosAngeles west=SanFrancisco
+SanDiego north=SanFrancisco
+Phoenix north=LasVegas south=Houston
+Dallas north=Denver
+Houston north=Phoenix east=Atlanta south=Miami
+Atlanta west=Houston
+Miami north=Houston

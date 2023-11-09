@@ -1,0 +1,3 @@
+Foo east=Bar
+Bar west=Foo east=Qu-ux
+Qu-ux west=Bar
