@@ -1,0 +1,64 @@
+@host = http://localhost:8081
+
+### basic login [badRequest]
+post {{host}}/login
+
+{
+    "emailo": "any",
+    "passwordp": "any"
+}
+
+### basic login [validations]
+post {{host}}/login
+
+{
+    "email": "any",
+    "password": "any"
+}
+
+### basic login [invalid u/p]
+post {{host}}/login
+
+{
+    "email": "new@gmail.com",
+    "password": "12345678"
+}
+
+### basic login [success]
+post {{host}}/login
+
+{
+    "email": "jhondev@gmail.com",
+    "password": "12345678"
+}
+
+# ****************************** SIGN UP
+### basic signup [validations]
+post {{host}}/signup
+
+{
+    "email": "any",
+    "password": "any"
+}
+
+### basic signup [success]
+post {{host}}/signup
+
+{
+    "email": "jhondev7@gmail.com",
+    "password": "12345678"
+}
+
+# *************************** PROFILE
+
+### get profile
+get {{host}}/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJ1c2VyX2lkIjoiMDE4YTA1M2YtNjdmZi03ZDU3LWI5M2YtYTFjOWQzMGU0ZWJiIn0.rTPKle9WOQF5-4V5qnn3AmaEeCRyCIA5OXOOHNT8CzI
+
+### patch profile
+patch {{host}}/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJ1c2VyX2lkIjoiMDE4YTA1M2YtNjdmZi03ZDU3LWI5M2YtYTFjOWQzMGU0ZWJiIn0.rTPKle9WOQF5-4V5qnn3AmaEeCRyCIA5OXOOHNT8CzI
+
+{
+    "telephone": "+5712345678"
+}

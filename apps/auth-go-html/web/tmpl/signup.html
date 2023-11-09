@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SignUp</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .google-btn {
+        background-color: #4285f4;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+      }
+      .google-btn:hover {
+        background-color: #357ae8;
+      }
+      .google-icon {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200 h-screen flex justify-center items-center">
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+      <h2 class="text-2xl font-semibold mb-4">Sign up</h2>
+      <a href="{{.AuthExternalURL}}" class="google-btn">
+        <img
+          src="https://developers.google.com/identity/images/g-logo.png"
+          width="20"
+          alt="Google logo"
+          class="google-icon"
+        />
+        Sign up with Google
+      </a>
+      <div class="relative flex py-5 items-center">
+        <div class="flex-grow border-t border-gray-400"></div>
+        <span class="flex-shrink mx-4 text-gray-400">or</span>
+        <div class="flex-grow border-t border-gray-400"></div>
+      </div>
+      <form action="/signup" method="post">
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-600" for="email"
+            >Email</label
+          >
+          <input
+            class="mt-1 p-2 w-full border rounded-md"
+            type="text"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-600" for="password"
+            >Password</label
+          >
+          <input
+            class="mt-1 p-2 w-full border rounded-md"
+            type="password"
+            id="password"
+            name="password"
+            required
+          />
+        </div>
+        <input
+          class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700"
+          type="submit"
+          value="Sign up"
+        />
+      </form>
+      {{if .Errors}}
+      <ul class="block text-red-600">
+        {{range $key, $value := .Errors}}
+        <li><strong>{{ $key }}:</strong> {{ $value }}</li>
+        {{end}}
+      </ul>
+      {{end}}
+      <p class="mt-4 text-sm">
+        Already have an account?
+        <a href="/login" class="text-blue-500 hover:underline">Login</a>
+      </p>
+    </div>
+  </body>
+</html>
