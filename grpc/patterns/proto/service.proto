@@ -2,10 +2,15 @@ syntax = "proto3";
 
 option go_package = "grpc-patterns/proto";
 
+message ClassificationIdsList {
+  repeated string values = 1;
+}
+
 message OptionalRequest {
   string req_value = 1;
   optional string opt_value_1 = 2;
   optional string opt_value_2 = 3;
+  optional ClassificationIdsList classification_ids = 4;
 }
 
 message OptionalResponse {
