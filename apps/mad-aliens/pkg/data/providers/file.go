@@ -9,7 +9,8 @@ import (
 	"strings"
 )
 
-// FileProvider will use a file as data source in the format
+// FileProvider implements the Provider interface and
+// will use a file as data source in the format
 // <CITY> <DIR>=<CITY> <DIR>=<CITY>
 // and will parse such format into the world.Map data-structure
 type FileProvider struct {

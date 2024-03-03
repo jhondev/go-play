@@ -6,7 +6,7 @@ import (
 )
 
 func TestFileData(t *testing.T) {
-	prov := providers.NewFile("./testdata/world_map_15.txt")
+	prov := providers.NewFile("./testdata/world_map.txt")
 	wmap, err := prov.GetMap()
 	if err != nil {
 		t.Fatalf("error: %v", err)

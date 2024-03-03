@@ -8,7 +8,7 @@ import (
 )
 
 func TestWorld(t *testing.T) {
-	prov := providers.NewFile("../data/providers/testdata/world_map_15.txt")
+	prov := providers.NewFile("../data/providers/testdata/world_map.txt")
 	wld, err := world.Load(prov, 10, 10, rand.Intn)
 	if err != nil {
 		t.Fatal(err)
